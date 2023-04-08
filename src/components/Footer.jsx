@@ -57,7 +57,9 @@ const Footer = () => {
                 <FaInstagram className="icons" />
               </div>
               <div>
+
               <FaYoutube className="icons" />
+
               </div>
             </div>
           </div>
@@ -163,6 +165,7 @@ const Wrapper = styled.section`
       padding-top: 3.2rem;
     }
   }
-`;
+`
+;
 
 export default Footer;

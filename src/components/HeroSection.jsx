@@ -1,13 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import { Button } from '../styles/Button';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { Button } from "../styles/Button";
+import { useGlobalContext } from "../context";
 
 const HeroSection = () => {
-  return (
+  const { name, image } = useGlobalContext();
 
-  <Wrapper>
-        <div className="container grid grid-two-column">
+  return (
+    <Wrapper>
+       <div className="container grid grid-two-column">
         <div className="section-hero-data">
         <p className="hero-top-data">Hi Bidders</p>
         <h1 className="hero-heading">Auction Gene</h1>
@@ -27,13 +29,11 @@ const HeroSection = () => {
           </picture>
          </div>
         </div>
-        
-  </Wrapper>
-
+    </Wrapper>
   );
 };
-const Wrapper = styled.section`
 
+const Wrapper = styled.section`
 padding: 3rem 0;
 .section-hero-data {
   display: flex;
@@ -84,7 +84,5 @@ picture {
 }
 
    `;
-
-
 
 export default HeroSection;

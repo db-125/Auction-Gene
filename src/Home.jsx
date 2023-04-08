@@ -1,17 +1,21 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components'
-import HeroSection from './components/HeroSection'
-import { Button } from "../src/styles/Button";
-
+import { useEffect } from "react";
+import HeroSection from "./components/HeroSection";
+import { useGlobalContext } from "./context";
+import Services from "./Services";
+import Contact from "./Contact";
 
 const Home = () => {
+  const { updateHomePage } = useGlobalContext();
+
+  useEffect(() => updateHomePage(), []);
+
   return (
-  
-    <HeroSection />
-  
-  
-);
+    <>
+      <HeroSection />
+      <Services />
+      <Contact />
+    </>
+  );
 };
-  
+
 export default Home;
